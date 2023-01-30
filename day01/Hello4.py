@@ -9,4 +9,5 @@ area = pi * r**2
 print('圓面積 = %.1f' % area)
 volume = 4/3 * pi * r**3
 print('球體積 = %.1f' % volume)
+#print('球體積 = %.1f' % (4/3 * pi * r**3))
 
