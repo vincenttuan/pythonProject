@@ -2,7 +2,9 @@
 # 今有雉、兔同籠，上有三十五頭，下九十四足。問雉、兔各幾何？
 total = 35
 feet = 94
-rabbit = (feet - (total*2))/(4-2)
+rabbit = (feet - total*2)/(4-2)
 chicken = total - rabbit
 print('雞 = %d, 兔 = %d' % (chicken, rabbit))
+print('雞 =', chicken, ', 兔 =', rabbit)
+print('雞 =', int(chicken), ', 兔 =', int(rabbit))
 
