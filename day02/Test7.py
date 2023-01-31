@@ -13,4 +13,5 @@ print('cash = {0:,}'.format(cash))
 amount = 1234567890.54321
 # 請印到小數點二位並帶千分號 -> 1,234,567,890.54
 print("{:,}".format(float('%.2f' % amount)))
+print("{:,.2f}".format(amount))
 
