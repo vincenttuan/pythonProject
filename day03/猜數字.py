@@ -20,7 +20,7 @@ while True:
     print('電腦 {} ~ {} 之間猜一個數字: {}'.format(min, max, pc_guess))
     if pc_guess < answer:
         min = pc_guess
-    elif guess > answer:
+    elif pc_guess > answer:
         max = pc_guess
     else:
         print('答案: {} 恭喜電腦答對了'.format(answer))
