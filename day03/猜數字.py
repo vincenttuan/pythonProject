@@ -8,6 +8,11 @@ while True:
     # 玩家:
     guess = input('玩家 {} ~ {} 之間猜一個數字: '.format(min, max))
     guess = int(guess)
+    # 驗證數字範圍
+    if guess <= min or guess >= max:
+        print('數字範圍錯誤')
+        continue
+    # 確認是否猜對
     if guess < answer:
         min = guess
     elif guess > answer:
