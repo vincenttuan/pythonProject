@@ -31,3 +31,11 @@ print(total)
 # PartIII 計算總薪資 = ?
 total = employees[0]['salary'] + employees[1]['salary'] + employees[2]['salary']
 print(total)
+# ------------------------------------------
+# 請問最高薪資 ?
+high_salary = 0  # 假設最高薪資 = 0
+for emp in employees:
+    if emp['salary'] > high_salary:
+        high_salary = emp['salary']  # 將最高薪資替換
+print('最高薪資: {:,}'.format(high_salary))
+
