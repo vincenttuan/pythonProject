@@ -12,3 +12,9 @@ for i in range(0, 100):
     second = r.randint(0, 51)
     poker[first], poker[second] = poker[second], poker[first]
 print(poker)
+# 取二張牌
+card1 = poker.pop()
+card2 = poker.pop()
+print(card1, card2)
+print(poker)
+print(len(poker))
