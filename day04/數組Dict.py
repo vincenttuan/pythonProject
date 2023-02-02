@@ -15,4 +15,19 @@ print(employees)
 for emp in employees:
     print('姓名:{} 薪資:${:,}'.format(emp['name'], emp['salary']))
 # ------------------------------------------
-# 計算總薪資 = ?
+# Part I 計算總薪資 = ?
+salary_list = [emp['salary'] for emp in employees]
+print(salary_list)  # [55000, 80000, 60000]
+print(sum(salary_list))  # 195000
+# ------------------------------------------
+print(sum([emp['salary'] for emp in employees]))
+# ------------------------------------------
+# PartII 計算總薪資 = ?
+total = 0  # 預設總薪資 = 0
+for emp in employees:
+    total = total + emp['salary']
+print(total)
+# ------------------------------------------
+# PartIII 計算總薪資 = ?
+total = employees[0]['salary'] + employees[1]['salary'] + employees[2]['salary']
+print(total)
