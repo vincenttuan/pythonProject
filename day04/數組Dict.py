@@ -38,4 +38,10 @@ for emp in employees:
     if emp['salary'] > high_salary:
         high_salary = emp['salary']  # 將最高薪資替換
 print('最高薪資: {:,}'.format(high_salary))
-
+# ------------------------------------------
+# 請問最低薪資 ? 自行練習看看
+low_salary = high_salary  # 假設最低薪資 = 最高薪資
+for emp in employees:
+    if emp['salary'] < low_salary:
+        low_salary = emp['salary']
+print('最低薪資: {:,}'.format(low_salary))
