@@ -45,3 +45,14 @@ for emp in employees:
     if emp['salary'] < low_salary:
         low_salary = emp['salary']
 print('最低薪資: {:,}'.format(low_salary))
+# ------------------------------------------
+# 將最高與最低薪資的人名放入到一個 names 的列表中
+# 印出 names 例如: ['John', 'Mary']
+salary_list = [emp['salary'] for emp in employees]
+high_salary = max(salary_list)  # 80000
+low_salary = min(salary_list)  # 55000
+names = []
+for emp in employees:
+    if emp['salary'] == high_salary or emp['salary'] == low_salary:
+        names.append(emp['name'])
+print(names)
