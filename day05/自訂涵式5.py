@@ -1,4 +1,5 @@
 import statistics as stat
+import matplotlib.pyplot as plt
 # 調查有5位同學的身高與體重
 no = [1, 2, 3, 4, 5]  # 座號
 h = [172, 168, 164, 170, 176]  # cm
@@ -12,3 +13,7 @@ print('體重 CV: %.2f%%' % (w_cv*100))
 result = '身高' if h_cv > w_cv else '體重'
 print('[%s]分散程度大' % result)
 
+plt.plot(no, h, w)
+plt.grid(True)
+plt.title('stat report')
+plt.show()
