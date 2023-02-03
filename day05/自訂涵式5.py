@@ -15,5 +15,7 @@ print('[%s]分散程度大' % result)
 
 plt.plot(no, h, w)
 plt.grid(True)
-plt.title('stat report')
+plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
+plt.rcParams['axes.unicode_minus'] = False
+plt.title('身高體重統計圖表')
 plt.show()
