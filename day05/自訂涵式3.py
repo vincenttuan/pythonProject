@@ -16,11 +16,15 @@ def verify_bmi(bmi):
     return result
 
 
+def print_bmi_info(bmi, result):
+    print('BMI: {0:.1f} {1}'.format(bmi, result))
+
+
 def calcBmi(h, w):
     # 1. 計算 bmi 值
     bmi = get_bmi(h, w)
     # 2. 驗證 bmi
     result = verify_bmi(bmi)
     # 3. 印出資料
-    print('BMI: {0:.1f} {1}'.format(bmi, result))
+    print_bmi_info(bmi, result)
 
