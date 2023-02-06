@@ -21,7 +21,7 @@ def get_employees(filename, colume1='name', column2='salary'):
         if len(row.strip()) == 0:
             continue
         # print(row)
-        data = re.split(' |, |,', row)  # 使用 re.split() 來切割資料
+        data = re.split(' |, |,|#', row)  # 使用 re.split() 來切割資料
         # print(data)
         # --------------------------------------
         emp = {}  # 建立一個 dict 數組
