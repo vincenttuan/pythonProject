@@ -17,6 +17,8 @@ def get_employees(filename, colume1='name', column2='salary'):
     '''
     employee_salary = []
     for row in rows:
+        if len(row.strip()) == 0:
+            continue
         # print(row)
         data = row.split()  # 預設是 " " 切割字串
         # print(data)
