@@ -1,3 +1,4 @@
+NAME SALARY
 John 45000
 Mary, 85000
 

@@ -17,7 +17,9 @@ def get_employees(filename, colume1='name', column2='salary'):
     ]
     '''
     employee_salary = []
-    for row in rows:
+    for i, row in enumerate(rows):
+        if i == 0:
+            continue
         if len(row.strip()) == 0:
             continue
         # print(row)
