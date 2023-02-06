@@ -7,7 +7,7 @@ def get_employees(filename, colume1='name', column2='salary'):
     # 資料整理
     '''
     例如:
-    employee_salary = 
+    employees = 
     [
         {"name": "John", "salary": 45000},
         {"name": "Mary", "salary": 85000},
@@ -16,7 +16,7 @@ def get_employees(filename, colume1='name', column2='salary'):
         ...
     ]
     '''
-    employee_salary = []
+    employees = []
     for i, row in enumerate(rows):
         if i == 0:
             continue
@@ -30,9 +30,9 @@ def get_employees(filename, colume1='name', column2='salary'):
         emp.setdefault(colume1, data[0].strip())
         emp.setdefault(column2, int(data[1].strip()))
         # --------------------------------------
-        employee_salary.append(emp)
+        employees.append(emp)
 
-    return employee_salary
+    return employees
 
 
 
