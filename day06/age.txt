@@ -1,0 +1,8 @@
+NAME AGE
+John 25
+Mary 52
+傑克 45
+蘿絲 38
+Bobo 29
+海倫 35
+Candy 60
