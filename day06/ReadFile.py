@@ -27,8 +27,8 @@ def get_employees(filename, colume1='name', column2='salary'):
         # print(data)
         # --------------------------------------
         emp = {}  # 建立一個 dict 數組
-        emp.setdefault(colume1, data[0])
-        emp.setdefault(column2, int(data[1]))
+        emp.setdefault(colume1, data[0].strip())
+        emp.setdefault(column2, int(data[1].strip()))
         # --------------------------------------
         employee_salary.append(emp)
 
