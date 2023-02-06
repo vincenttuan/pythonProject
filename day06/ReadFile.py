@@ -1,3 +1,4 @@
+import re
 # 資料讀取
 def get_employees(filename, colume1='name', column2='salary'):
     file = open(filename, 'r', encoding='UTF-8')
@@ -20,7 +21,7 @@ def get_employees(filename, colume1='name', column2='salary'):
         if len(row.strip()) == 0:
             continue
         # print(row)
-        data = row.split()  # 預設是 " " 切割字串
+        data = re.split(' |, |,', row)  # 預設是 " " 切割字串
         # print(data)
         # --------------------------------------
         emp = {}  # 建立一個 dict 數組
