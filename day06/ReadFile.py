@@ -1,6 +1,6 @@
 import re
 # 資料讀取
-def get_employees(filename, colume1='name', column2='salary'):
+def get_employees(filename, colume1='name', column2='salary', column3=None):
     file = open(filename, 'r', encoding='UTF-8')
     rows = file.readlines()
     # print(rows)
@@ -29,6 +29,9 @@ def get_employees(filename, colume1='name', column2='salary'):
         emp = {}  # 建立一個 dict 數組
         emp.setdefault(colume1, data[0].strip())
         emp.setdefault(column2, int(data[1].strip()))
+        # 是否有第三欄 ?
+        if column3 is not None:
+            emp.setdefault(column3, int(data[2].strip()))
         # --------------------------------------
         employees.append(emp)
 
