@@ -2,7 +2,7 @@
 def get_employees(filename, colume1='name', column2='salary'):
     file = open(filename, 'r', encoding='UTF-8')
     rows = file.readlines()
-    print(rows)
+    # print(rows)
     # 資料整理
     '''
     例如:
@@ -29,5 +29,5 @@ def get_employees(filename, colume1='name', column2='salary'):
 
     return employee_salary
 
-# 資料分析
+
 
