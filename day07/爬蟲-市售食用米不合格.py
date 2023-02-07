@@ -37,7 +37,8 @@ if __name__ == '__main__':
         print(item)
     # 6. 將結果存檔
     if len(result) > 0:
-        file = open('result.txt', 'w', encoding='UTF-8')
+        file_name = 'result_{0}.txt'.format(keyword)
+        file = open(file_name, 'w', encoding='UTF-8')
         # 將資料逐筆寫入
         for item in result:
             file.write(str(item))  # 要轉成字串才能寫入
