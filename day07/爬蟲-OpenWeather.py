@@ -25,5 +25,8 @@ if __name__ == '__main__':
     weather.setdefault('雲層覆蓋', weather_clouds)
     weather.setdefault('每秒風速', weather_wind_speed)
     print(weather)
+    # 根據 key 值逐一將字典資料印出
+    for key in weather.keys():
+        print(key, weather[key])
 
 
