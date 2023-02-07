@@ -2,8 +2,8 @@
 import json
 import requests
 if __name__ == '__main__':
-    city_name = 'tokyo'
-    country = 'jp'
+    city_name = 'taipei'
+    country = 'tw'
     key = '1b5307db9ae068d9b14059506ded8b0e'
     url = 'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'.format(city_name, country, key)
     print(url)
