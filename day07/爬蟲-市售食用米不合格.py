@@ -26,7 +26,7 @@ if __name__ == '__main__':
     print('bad_rice:')
     print(bad_rice)
     # 4. 分析
-    keyword = input('請輸入品名關鍵字: ')
+    keyword = input('請輸入品名關鍵字: ').strip()
     result = []  # 存放分析的結果
     for item in bad_rice:
         if keyword in item['品名']:
@@ -35,7 +35,16 @@ if __name__ == '__main__':
     print('分析結果')
     for item in result:
         print(item)
-
+    # 6. 將結果存檔
+    if len(result) > 0:
+        file = open('result.txt', 'w', encoding='UTF-8')
+        # 將資料逐筆寫入
+        for item in result:
+            file.write(str(item))  # 要轉成字串才能寫入
+            file.write('\n')  # 換行
+        print('寫檔完成')
+    else:
+        print('查無資料')
 
 
 
