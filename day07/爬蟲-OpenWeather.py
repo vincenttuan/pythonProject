@@ -1,10 +1,11 @@
-# 網路位置: https://api.openweathermap.org/data/2.5/weather?q={},tw&appid={}
+# 網路位置: https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}
 import json
 import requests
 if __name__ == '__main__':
-    city_name = 'taipei'
+    city_name = 'tokyo'
+    country = 'jp'
     key = '1b5307db9ae068d9b14059506ded8b0e'
-    url = 'https://api.openweathermap.org/data/2.5/weather?q={},tw&appid={}'.format(city_name, key)
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'.format(city_name, country, key)
     print(url)
     data = json.loads(requests.get(url).text)
     print(data)
@@ -15,6 +16,8 @@ if __name__ == '__main__':
     weather_humidity = '{}%'.format(data['main']['humidity'])
     weather_clouds = '{}%'.format(data['clouds']['all'])
     weather_wind_speed = '{} m/s'.format(data['wind']['speed'])
+    city_name = data['name']
+    country = data['sys']['country']
     # 建立 weather 字典數組
     weather = {}
     weather.setdefault('天氣狀態', weather_main)
@@ -24,6 +27,8 @@ if __name__ == '__main__':
     weather.setdefault('現在濕度', weather_humidity)
     weather.setdefault('雲層覆蓋', weather_clouds)
     weather.setdefault('每秒風速', weather_wind_speed)
+    weather.setdefault('城市', city_name)
+    weather.setdefault('國家', country)
     print(weather)
     # 根據 key 值逐一將字典資料印出
     for key in weather.keys():
