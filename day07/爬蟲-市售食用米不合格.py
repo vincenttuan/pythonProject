@@ -25,6 +25,17 @@ if __name__ == '__main__':
         bad_rice.append(rice)
     print('bad_rice:')
     print(bad_rice)
+    # 4. 分析
+    keyword = input('請輸入品名關鍵字: ')
+    result = []  # 存放分析的結果
+    for item in bad_rice:
+        if keyword in item['品名']:
+            result.append(item)  # 將符合的資料放入 result 中
+    # 5 印出分析結果
+    print('分析結果')
+    for item in result:
+        print(item)
+
 
 
 
