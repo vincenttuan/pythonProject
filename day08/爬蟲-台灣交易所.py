@@ -16,13 +16,16 @@ if __name__ == '__main__':
         stock = row.split('","')
         if len(stock) == 7:
             # print(stock)
-            dict = {}
-            dict.setdefault('證券代號', stock[0].replace('"', ''))
-            dict.setdefault('證券名稱', stock[1])
-            dict.setdefault('殖利率', stock[2])
-            dict.setdefault('股利年度', stock[3])
-            dict.setdefault('本益比', stock[4])
-            dict.setdefault('股價淨值比', stock[5])
-            dict.setdefault('財報', stock[6].replace('",', ''))
-            print(dict)
+            try:
+                dict = {}
+                dict.setdefault('證券代號', stock[0].replace('"', ''))
+                dict.setdefault('證券名稱', stock[1])
+                dict.setdefault('殖利率', float(stock[2]))
+                dict.setdefault('股利年度', stock[3])
+                dict.setdefault('本益比', float(stock[4]))
+                dict.setdefault('股價淨值比', float(stock[5]))
+                dict.setdefault('財報', stock[6].replace('",', ''))
+                print(dict)
+            except ValueError:
+                pass
 
