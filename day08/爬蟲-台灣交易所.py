@@ -31,5 +31,11 @@ if __name__ == '__main__':
             except ValueError:
                 pass
 
-    print(len(stocks))
-    print(stocks)
+    # print(len(stocks))
+    # print(stocks)
+    # 分析
+    # 條件: 本益比 <= 5 and 殖利率 >= 10 and 股價淨值比 < 1
+    for stock in stocks:
+        if stock['本益比'] <= 5 and stock['殖利率'] >= 10 and stock['股價淨值比'] < 1:
+            print(stock)
+
