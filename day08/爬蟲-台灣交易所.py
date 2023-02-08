@@ -3,6 +3,8 @@
 # 資料格式: 證券代號 證券名稱 殖利率(%) 股利年度 本益比 股價淨值比 財報年/季
 import requests
 import datetime as dt
+from day08.GetStockPrice import get_stock_price
+import time
 
 if __name__ == '__main__':
     date = dt.datetime(2023, 2, 7)  # 得到日期物件
@@ -37,5 +39,7 @@ if __name__ == '__main__':
     # 條件: 本益比 <= 5 and 殖利率 >= 10 and 股價淨值比 < 1
     for stock in stocks:
         if stock['本益比'] <= 5 and stock['殖利率'] >= 10 and stock['股價淨值比'] < 1:
+            stock['價格'] = get_stock_price(stock['證券代號'])
+            time.sleep(1)
             print(stock)
 
