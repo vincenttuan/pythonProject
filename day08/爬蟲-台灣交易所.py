@@ -11,5 +11,18 @@ if __name__ == '__main__':
     print(date_str, type(date_str))
     url = 'https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&date={}&selectType=ALL'.format(date_str)
     data = requests.get(url).text
-    print(data)
+    # print(data)
+    for row in data.split("\r\n"):
+        stock = row.split('","')
+        if len(stock) == 7:
+            # print(stock)
+            dict = {}
+            dict.setdefault('證券代號', stock[0].replace('"', ''))
+            dict.setdefault('證券名稱', stock[1])
+            dict.setdefault('殖利率', stock[2])
+            dict.setdefault('股利年度', stock[3])
+            dict.setdefault('本益比', stock[4])
+            dict.setdefault('股價淨值比', stock[5])
+            dict.setdefault('財報', stock[6].replace('",', ''))
+            print(dict)
 
