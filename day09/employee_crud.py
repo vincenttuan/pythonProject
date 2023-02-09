@@ -55,6 +55,7 @@ def find_one_employee(id):
         print(employee)
     conn.close()
 
+
 def get_sum_avg_employee_salary():
     sql = 'select sum(employee_salary), avg(employee_salary) from employee'
     conn = sqlite3.connect('demo.db')
@@ -63,3 +64,14 @@ def get_sum_avg_employee_salary():
     print(data, type(data))
     print('總薪資: {:,} 平均薪資: {:,}'.format(data[0], data[1]))
     conn.close()
+
+
+def update_employee(employee_name, employee_salary, id):
+    sql = 'update employee set employee_name=?, employee_salary=? where id=?'
+    conn = sqlite3.connect('demo.db')
+    cursor = conn.cursor()
+    args = [employee_name, employee_salary, id]
+    cursor = cursor.execute(sql, args)
+    print('資料更新筆數: {}'.format(cursor.rowcount))
+    conn.close()
+
