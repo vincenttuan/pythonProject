@@ -53,6 +53,12 @@ def find_one_employee(id):
         print('查無資料')
     else:
         print(employee)
+    conn.close()
 
-
-
+def get_sum_avg_employee_salary():
+    sql = 'select sum(employee_salary), avg(employee_salary) from employee'
+    conn = sqlite3.connect('demo.db')
+    cursor = conn.cursor()
+    data = cursor.execute(sql).fetchone()
+    print(data)
+    conn.close()
