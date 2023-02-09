@@ -35,11 +35,23 @@ def find_all_employee():
     conn = sqlite3.connect('demo.db')
     cursor = conn.cursor()
     employees = cursor.execute(sql).fetchall()
-    print('%2s %-7s %8s %24s' % ('Id', 'Name', 'Salary', 'Create Time'))
+    print('%2s %-7s %8s %24s' % ('Id', 'Name', 'Salary($)', 'Create Time'))
     print('---------------------------------------------')
     for emp in employees:  # 逐筆印出
         print('%2s %-7s %8s %24s' % (emp[0], emp[1], '{:,}'.format(emp[2]), emp[3]))
     print('---------------------------------------------')
     conn.close()
+
+
+def find_one_employee(id):
+    sql = 'select id, employee_name, employee_salary, create_time from employee where id = ?'
+    conn = sqlite3.connect('demo.db')
+    cursor = conn.cursor()
+    employee = cursor.execute(sql, [id]).fetchone()
+    if employee is None:
+        print('查無資料')
+    else:
+        print(employee)
+
 
 
