@@ -75,3 +75,11 @@ def update_employee(employee_name, employee_salary, id):
     print('資料更新筆數: {}'.format(cursor.rowcount))
     conn.close()
 
+
+def delete_employee(id):
+    sql = 'delete from employee where id=?'
+    conn = sqlite3.connect('demo.db')
+    cursor = conn.cursor()
+    cursor = cursor.execute(sql, [id])
+    print('資料刪除筆數: {}'.format(cursor.rowcount))
+    conn.close()
