@@ -29,6 +29,14 @@ def create_many_employee(employees):
     conn.close()
 
 
-
+def find_all_employee():
+    # 查詢語句
+    sql = 'select id, employee_name, employee_salary, create_time from employee'
+    conn = sqlite3.connect('demo.db')
+    cursor = conn.cursor()
+    employees = cursor.execute(sql).fetchall()
+    for emp in employees:  # 逐筆印出
+        print(emp)
+    conn.close()
 
 
