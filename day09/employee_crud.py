@@ -60,5 +60,5 @@ def get_sum_avg_employee_salary():
     conn = sqlite3.connect('demo.db')
     cursor = conn.cursor()
     data = cursor.execute(sql).fetchone()
-    print(data)
+    print('總薪資: {:,} 平均薪資: {:,}'.format(data[0], data[1]))
     conn.close()
