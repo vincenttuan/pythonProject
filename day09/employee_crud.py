@@ -17,8 +17,16 @@ def create_employee(employee_name, employee_salary):
     conn.close()
 
 
-
-
+def create_many_employee(employees):
+    # 新增 sql 語句
+    sql = 'insert into employee(employee_name, employee_salary) values(?, ?)'
+    conn = sqlite3.connect('demo.db')
+    cursor = conn.cursor()
+    # employees 是一個 [('John', 35000), ('Mary', 42000), ('Bob', 68000) ...]
+    cursor = cursor.executemany(sql, employees)
+    print('新增筆數: {}'.format(cursor.rowcount))
+    conn.commit()
+    conn.close()
 
 
 
