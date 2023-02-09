@@ -47,7 +47,8 @@ def find_one_employee(id):
     sql = 'select id, employee_name, employee_salary, create_time from employee where id = ?'
     conn = sqlite3.connect('demo.db')
     cursor = conn.cursor()
-    employee = cursor.execute(sql, [id]).fetchone()
+    args = [id]
+    employee = cursor.execute(sql, args).fetchone()
     if employee is None:
         print('查無資料')
     else:
