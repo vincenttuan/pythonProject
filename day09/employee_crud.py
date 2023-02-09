@@ -35,8 +35,11 @@ def find_all_employee():
     conn = sqlite3.connect('demo.db')
     cursor = conn.cursor()
     employees = cursor.execute(sql).fetchall()
+    print('%2s %-7s %8s %24s' % ('Id', 'Name', 'Salary', 'Create Time'))
+    print('---------------------------------------------')
     for emp in employees:  # 逐筆印出
-        print(emp)
+        print('%2s %-7s %8s %24s' % (emp[0], emp[1], '{:,}'.format(emp[2]), emp[3]))
+    print('---------------------------------------------')
     conn.close()
 
 
