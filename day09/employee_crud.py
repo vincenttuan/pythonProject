@@ -2,6 +2,7 @@ import sqlite3
 # employee 資料表的 crud
 # create, read, update, delete
 
+
 # 建立一筆 employee 紀錄
 def create_employee(employee_name, employee_salary):
     # 新增 sql 語句
