@@ -73,6 +73,7 @@ def update_employee(employee_name, employee_salary, id):
     args = [employee_name, employee_salary, id]
     cursor = cursor.execute(sql, args)
     print('資料更新筆數: {}'.format(cursor.rowcount))
+    conn.commit()
     conn.close()
 
 
@@ -82,4 +83,5 @@ def delete_employee(id):
     cursor = conn.cursor()
     cursor = cursor.execute(sql, [id])
     print('資料刪除筆數: {}'.format(cursor.rowcount))
+    conn.commit()
     conn.close()
