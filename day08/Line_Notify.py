@@ -8,5 +8,13 @@ if __name__ == '__main__':
     headers = {
         "Authorization": "Bearer " + token
     }
+    # 輸入要傳送的資料
+    message = input('請輸入文字訊息(1000字內):')
+    params = {
+        "message": message
+    }
+    # 傳送到 LineNotify
+    resp = requests.post(url, headers=headers, params=params)
+    print(resp)  # 若看到 200 表示成功
 
 

@@ -1,0 +1,23 @@
+反安裝(若之前有其他本):
+pip uninstall opencv-contrib-python
+pip uninstall opencv-python
+
+安裝:
+pip install opencv-python
+pip install opencv-contrib-python
+
+一.設定要訓練的人名
+Config.py
+第四行: MY_NAME = '你的名字'
+
+二.拍照（獲取人臉素材(樣本)，至少 200 張）
+執行：Face_capture_positives.py
+
+PGM viewer for browser
+https://smallpond.ca/jim/photomicrography/pgmViewer/index.html
+
+三.樣本訓練（機器學習）
+執行：Face_training.py
+
+四.進行辨識實測
+執行：Face_recognition.py
