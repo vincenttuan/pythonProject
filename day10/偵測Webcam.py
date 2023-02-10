@@ -2,8 +2,8 @@ import cv2
 
 cap = cv2.VideoCapture(0)
 print(cap)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)  # 320, 640, 800, 1024
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)  # 240, 480, 600, 768
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 800)  # 320, 640, 800, 1024
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 600)  # 240, 480, 600, 768
 
 # 人臉特徵檔
 face_cascade = cv2.CascadeClassifier('./haarcascade/haarcascade_frontalface_default.xml')
