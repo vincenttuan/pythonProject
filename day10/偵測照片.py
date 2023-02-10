@@ -21,7 +21,8 @@ faces = face_cascade.detectMultiScale(
     flags=cv2.CASCADE_SCALE_IMAGE  # 比對類型
 )
 print('臉部座標:', faces)
-
+for (x, y, w, h) in faces:
+    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
 # 顯示影像
 cv2.imshow('My image', frame)
